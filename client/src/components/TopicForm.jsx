@@ -45,7 +45,7 @@ const TopicForm = ({ setResult, setLoading, loading, setError }) => {
         dispatch(updateCredits(result.creditsLeft))
       }
     } catch (error) {
-      setError("Faild to fetch notes from server");
+      setError("Failed to fetch notes from server");
       setLoading(false);
     }
   };
