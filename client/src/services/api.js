@@ -26,3 +26,25 @@ export const generateNotes = async (payload) => {
     console.log("Generate notes Error :",error);
   }
 };
+
+export const generatePdf = async (result) => {
+  try {
+    const response = await axios.post(`${serverUrl}/pdf/generate-pdf`,{result},{
+      responseType:"blob", withCredentials:true
+    })
+
+    const blob = new Blob([response.data],{
+      type:"application/pdf"
+    })
+
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "ExamNotesAI.pdf";
+    link.click();
+
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    throw new Error("PDF download failed")
+  }
+};

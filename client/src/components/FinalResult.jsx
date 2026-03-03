@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import SectionHeader from "./SectionHeader";
 import MermaidSetup from "./MermaidSetup";
 import RechartSetUp from "./RechartSetup";
+import { generatePdf } from "../services/api";
 
 const markDownComponent = {
   h1: ({ children }) => (
@@ -53,7 +54,9 @@ const FinalResult = ({ result }) => {
           >
             {quickRevision ? "Exit Revision Mode" : "Quick Revision (5 min)"}
           </button>
-          <button className="px-4 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700">
+          <button 
+          onClick={()=>generatePdf(result)}
+          className="px-4 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700">
             ⬇️ Download PDF
           </button>
         </div>

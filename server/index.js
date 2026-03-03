@@ -6,6 +6,7 @@ import userRouter from "./routes/user.routes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import notesRouter from "./routes/generate.routes.js";
+import pdfRouter from "./routes/pdf.routes.js";
 dotenv.config();
 
 const app = express();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/notes",notesRouter);
+app.use("/api/pdf",pdfRouter);
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
   connectDB();
