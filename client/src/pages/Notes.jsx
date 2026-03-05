@@ -7,9 +7,9 @@ import Sidebar from "../components/Sidebar";
 import FinalResult from "../components/FinalResult";
 
 const Notes = () => {
+  const navigate = useNavigate();
   const { userData } = useSelector((state) => state.user);
   const credits = userData.credits;
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
