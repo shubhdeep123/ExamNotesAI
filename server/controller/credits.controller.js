@@ -28,14 +28,12 @@ export const createCreditsOrder = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],
-
       success_url: `${process.env.CLIENT_URL}/payment-success`,
       cancel_url: `${process.env.CLIENT_URL}/payment-failed`,
-
       line_items: [
         {
           price_data: {
-            currency: "usd",
+            currency: "inr",
             product_data: {
               name: `${CREDIT_MAP[amount]} Credits`,
             },
@@ -44,7 +42,6 @@ export const createCreditsOrder = async (req, res) => {
           quantity: 1,
         },
       ],
-
       metadata: {
         userId,
         credits: CREDIT_MAP[amount],
@@ -58,6 +55,7 @@ export const createCreditsOrder = async (req, res) => {
 };
 
 export const stripeWebhook = async (req, res) => {
+  console.log("webhook triggered");
   const sig = req.headers["stripe-signature"];
   let event;
 
