@@ -9,7 +9,7 @@ import History from "./pages/History";
 import Pricing from "./pages/Pricing";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
-export const serverUrl = "http://localhost:8000/api";
+export const serverUrl = "https://examnotesaiserver-0u6p.onrender.com/api";
 
 const App = () => {
   const dispatch = useDispatch();
