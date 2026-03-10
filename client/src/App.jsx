@@ -43,7 +43,7 @@ const App = () => {
           element={userData ? <Pricing /> : <Navigate to="/login" replace />}
         />
         <Route path="/payment-success" element={<PaymentSuccess />} />
-        <Route path="payment-failed" element={<PaymentFailed />} />
+        <Route path="/payment-failed" element={<PaymentFailed />} />
       </Routes>
     </>
   );
