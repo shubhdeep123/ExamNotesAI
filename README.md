@@ -4,7 +4,6 @@
 ![Node](https://img.shields.io/badge/Node.js-Backend-green)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
 ![Stripe](https://img.shields.io/badge/Stripe-Payments-purple)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 **ExamNotesAI** is an AI-powered platform that helps students quickly generate **structured exam notes from PDFs and study material**.
 
@@ -117,7 +116,14 @@ ExamNotesAI
 │   ├── middleware
 │   ├── utils
 │   └── server.js
-│
+|
+├── screenshots
+│   ├── homepage.png
+│   ├── generate-notes.png
+│   ├── notes.png
+│   ├── payment.png
+│   └── download.png
+|
 └── README.md
 ```
 
