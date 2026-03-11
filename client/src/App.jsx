@@ -10,6 +10,7 @@ import Pricing from "./pages/Pricing";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 export const serverUrl = "https://examnotesaiserver-0u6p.onrender.com/api";
+// export const serverUrl = "http://localhost:8000/api";
 
 const App = () => {
   const dispatch = useDispatch();

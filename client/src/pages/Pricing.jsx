@@ -17,7 +17,7 @@ const Pricing = () => {
       setPayingAmount(amount);
       setPaying(true);
       const result = await axios.post(
-        `${serverUrl}/credit/order`,
+        `${serverUrl}/credits/order`,
         { amount },
         { withCredentials: true },
       );

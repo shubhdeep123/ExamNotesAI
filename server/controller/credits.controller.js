@@ -44,7 +44,7 @@ export const createCreditsOrder = async (req, res) => {
       ],
       metadata: {
         userId,
-        credits: CREDIT_MAP[amount],
+        credits: CREDIT_MAP[amount].toString(),
       },
     });
 
@@ -55,9 +55,10 @@ export const createCreditsOrder = async (req, res) => {
 };
 
 export const stripeWebhook = async (req, res) => {
-  console.log("webhook triggered");
   const sig = req.headers["stripe-signature"];
   let event;
+  let userId;
+  let creditsToAdd;
 
   try {
     event = stripe.webhooks.constructEvent(
@@ -72,22 +73,24 @@ export const stripeWebhook = async (req, res) => {
 
   if (event.type == "checkout.session.completed") {
     const session = event.data.object;
-    const userId = session.metadata.userId;
-    const creditsToAdd = Number(session.metadata.credits);
+    userId = session.metadata.userId;
+    creditsToAdd = Number(session.metadata.credits);
 
     if (!userId || !creditsToAdd) {
       return res.status(400).json({ message: "meta data invalid" });
     }
   }
 
-  const user = await UserModel.findByIdAndUpdate(
-    userId,
-    {
-      $inc: { credits: creditsToAdd },
-      $set: { isCreditAvailable: true },
-    },
-    { new: true },
-  );
+  if (userId && creditsToAdd) {
+    const user = await UserModel.findByIdAndUpdate(
+      userId,
+      {
+        $inc: { credits: creditsToAdd },
+        $set: { isCreditAvailable: true },
+      },
+      { new: true },
+    );
+  }
 
   res.json({ recieved: true });
 };
