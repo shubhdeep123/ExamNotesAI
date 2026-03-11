@@ -1,7 +1,7 @@
 # 📚 ExamNotesAI
 
 **ExamNotesAI** is an AI-powered platform that helps students quickly generate **structured exam notes from PDFs and study material**.  
-Upload a PDF, let AI process the content, and receive **clear, concise notes optimized for exam preparation**.
+Download a PDF, let AI process the content, and receive **clear, concise notes optimized for exam preparation**.
 
 The platform also includes a **credit-based payment system using Stripe**, allowing users to purchase credits for generating notes.
 
@@ -28,7 +28,7 @@ CVC: any 3 digit
 # 🚀 Features
 
 ✨ AI-powered exam notes generation  
-📄 Upload and process PDF documents  
+📄 Download notes as PDF documents  
 🧠 Smart summarization and key concept extraction  
 💳 Credit-based usage system  
 💰 Stripe payment integration  
@@ -82,8 +82,6 @@ ExamNotesAI
 │   ├── middleware
 │   ├── utils
 │   └── server.js
-│
-├── uploads
 │
 └── README.md
 ```
