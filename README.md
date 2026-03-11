@@ -1,7 +1,14 @@
 # 📚 ExamNotesAI
 
-**ExamNotesAI** is an AI-powered platform that helps students quickly generate **structured exam notes from PDFs and study material**.  
-Download a PDF, let AI process the content, and receive **clear, concise notes optimized for exam preparation**.
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![Node](https://img.shields.io/badge/Node.js-Backend-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![Stripe](https://img.shields.io/badge/Stripe-Payments-purple)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
+**ExamNotesAI** is an AI-powered platform that helps students quickly generate **structured exam notes from PDFs and study material**.
+
+Download PDF notes, let AI process the content, and receive **clear, concise notes optimized for exam preparation**.
 
 The platform also includes a **credit-based payment system using Stripe**, allowing users to purchase credits for generating notes.
 
@@ -14,21 +21,31 @@ The platform also includes a **credit-based payment system using Stripe**, allow
 🔗 **Live App:**  
 https://examnotesaiclient-2jcj.onrender.com/
 
-🧪 **Test Payment (Stripe Test Mode)**  
-Use the following test card:
+🧪 **Test Payment (Stripe Test Mode)**
 
 ```
-Card number: 4000 0035 6000 0008
-Expiry: any future date
-CVC: any 3 digit
+Card Number: 4000 0035 6000 0008
+Expiry Date: Any future date
+CVC: Any 3 digits
 ```
+---
+# 📸 Demo Screenshots
+
+| Homepage | Generate Notes |
+|----------|----------------|
+| ![](./screenshots/homepage.png) | ![](./screenshots/generate-notes.png) |
+
+| Generated Notes | Stripe Checkout |
+|-----------------|----------------|
+| ![](./screenshots/notes.png) | ![](./screenshots/payment.png) |
+
 
 ---
 
 # 🚀 Features
 
 ✨ AI-powered exam notes generation  
-📄 Download notes as PDF documents  
+📄 Download generated notes as PDF  
 🧠 Smart summarization and key concept extraction  
 💳 Credit-based usage system  
 💰 Stripe payment integration  
@@ -60,7 +77,25 @@ CVC: any 3 digit
 - Stripe Webhooks
 
 ## AI Processing
-- GeminiAI API (or similar LLM service)
+- Gemini AI API
+
+---
+
+# 🏗️ Architecture
+
+```
+User
+  ↓
+React Frontend
+  ↓
+Express Backend API
+  ↓
+MongoDB Database
+  ↓
+Gemini AI API
+  ↓
+Stripe Payments
+```
 
 ---
 
@@ -121,8 +156,6 @@ npm install
 
 Create a `.env` file inside the **server folder**.
 
-Example configuration:
-
 ```env
 PORT=8000
 
@@ -157,7 +190,7 @@ cd client
 npm run dev
 ```
 
-The application should now be running at:
+Application will run at:
 
 ```
 Frontend: http://localhost:5173
@@ -168,13 +201,13 @@ Backend: http://localhost:8000
 
 # 💳 Stripe Webhook Setup
 
-Stripe webhooks are required to securely add credits after payment.
+Stripe webhooks securely confirm payments before adding credits.
 
 ### Install Stripe CLI
 
 https://stripe.com/docs/stripe-cli
 
-### Login to Stripe
+### Login
 
 ```bash
 stripe login
@@ -186,9 +219,7 @@ stripe login
 stripe listen --forward-to localhost:8000/api/credits/webhook
 ```
 
-This will provide a webhook secret.
-
-Add it to your `.env` file:
+Add the webhook secret to `.env`:
 
 ```
 STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxx
@@ -199,8 +230,6 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxx
 # 🔑 Credit System
 
 The platform uses a **credit-based model**.
-
-Flow:
 
 ```
 User purchases credits
@@ -262,6 +291,18 @@ POST /api/credits/webhook
 
 ---
 
+# 🚀 Deployment
+
+Frontend: Render  
+Backend: Render  
+Database: MongoDB Atlas  
+
+Live Demo:
+
+https://examnotesaiclient-2jcj.onrender.com/
+
+---
+
 # 🧠 Future Improvements
 
 - AI flashcards generation
@@ -285,10 +326,10 @@ https://github.com/shubhdeep123
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a new branch
-3. Commit changes
-4. Open a Pull Request
+1. Fork the repository  
+2. Create a new branch  
+3. Commit changes  
+4. Open a Pull Request  
 
 ---
 
