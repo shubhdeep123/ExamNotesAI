@@ -206,6 +206,7 @@ This ensures **secure payment verification before granting credits**.
 
 ```
 POST /api/auth/google
+GET  /api/auth/logout
 ```
 
 ---
@@ -213,7 +214,7 @@ POST /api/auth/google
 ## User
 
 ```
-GET /api/user/profile
+GET /api/user/currentuser
 ```
 
 ---
@@ -221,9 +222,9 @@ GET /api/user/profile
 ## Notes
 
 ```
-GET /api/notes
-POST /api/notes
-DELETE /api/notes/:id
+GET /api/getnotes
+POST /api/generate-notes
+GET /api/notes/:id
 ```
 
 ---
@@ -231,7 +232,7 @@ DELETE /api/notes/:id
 ## PDF Processing
 
 ```
-POST /api/pdf/upload
+POST /api/pdf/generate-pdf
 ```
 
 ---
@@ -239,7 +240,7 @@ POST /api/pdf/upload
 ## Credits
 
 ```
-POST /api/credit/buy
+POST /api/credits/order
 POST /api/credits/webhook
 ```
 
@@ -272,12 +273,6 @@ Contributions are welcome!
 2. Create a new branch
 3. Commit changes
 4. Open a Pull Request
-
----
-
-# 📜 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
