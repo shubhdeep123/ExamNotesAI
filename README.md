@@ -7,6 +7,24 @@ The platform also includes a **credit-based payment system using Stripe**, allow
 
 ---
 
+# 🌐 Live Demo
+
+🚀 Try the application here:
+
+🔗 **Live App:**  
+https://examnotesaiclient-2jcj.onrender.com/
+
+🧪 **Test Payment (Stripe Test Mode)**  
+Use the following test card:
+
+```
+Card number: 4000 0035 6000 0008
+Expiry: any future date
+CVC: any 3 digit
+```
+
+---
+
 # 🚀 Features
 
 ✨ AI-powered exam notes generation  
