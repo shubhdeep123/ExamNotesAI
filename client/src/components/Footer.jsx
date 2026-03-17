@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { serverUrl } from "../App";
 import { useDispatch } from "react-redux";
-import { setUserData } from "../redux/userSlice";
+import { setLoadingFalse, setUserData } from "../redux/userSlice";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const Footer = () => {
       navigate("/login");
     } catch (error) {
       console.log("logout error", error);
+      dispatch(setLoadingFalse())
     }
   };
   return (

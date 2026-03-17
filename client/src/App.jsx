@@ -1,4 +1,4 @@
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
@@ -11,6 +11,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 import Studio from "./pages/Studio";
 import WIPFeature from "./pages/WIPFeature";
+import Loader from "./components/Loader";
 export const serverUrl = import.meta.env.VITE_API_URL;
 
 const App = () => {
@@ -19,7 +20,13 @@ const App = () => {
     getCurrentUser(dispatch);
   }, [dispatch]);
 
-  const { userData } = useSelector((state) => state.user);
+  const { userData, isLoading } = useSelector((state) => state.user);
+
+  // Show loader while checking auth
+  if (isLoading) {
+    return <Loader/>;
+  }
+
   console.log(userData);
   return (
     <>

@@ -6,7 +6,7 @@ import MenuItem from "./MenuItem";
 import axios from "axios";
 import { serverUrl } from "../App";
 import { useDispatch } from "react-redux";
-import { setUserData } from "../redux/userSlice";
+import { setLoadingFalse, setUserData } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -25,6 +25,7 @@ const Navbar = () => {
         useNavigate("/login");
     } catch (error) {
         console.log("logout error", error);
+        dispatch(setLoadingFalse())
     }
   }
   return (

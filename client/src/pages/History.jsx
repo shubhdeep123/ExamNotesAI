@@ -199,7 +199,7 @@ const History = () => {
           initial={{ x: -320 }}
           animate={{ x: 20 }}
           exit={{ x: -320 }}
-          className="lg:col-span-3 rounded-2xl bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] p-6 min-h-[75vh]"
+          className="lg:col-span-3 rounded-2xl bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] p-6 min-h-[75vh] mr-4"
         >
           {loading && (
             <p className="text-center text-gray-500">Loading Notes....</p>

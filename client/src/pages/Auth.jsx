@@ -8,7 +8,7 @@ import { auth, provider } from "../utils/firebase";
 import axios from "axios";
 import { serverUrl } from "../App";
 import { useDispatch } from "react-redux";
-import { setUserData } from "../redux/userSlice";
+import { setLoadingFalse, setUserData } from "../redux/userSlice";
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -22,6 +22,7 @@ const Auth = () => {
       dispatch(setUserData(result.data));
     } catch (error) {
       console.error("Google Sign-In Error:", error);
+      dispatch(setLoadingFalse())
     }
   };
   return (
