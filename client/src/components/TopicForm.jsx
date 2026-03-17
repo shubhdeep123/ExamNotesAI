@@ -1,3 +1,5 @@
+// obselete will delete it later
+
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Toggle from "./Toggle";
