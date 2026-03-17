@@ -15,14 +15,16 @@ const app = express();
 
 app.post(
   "/api/credits/webhook",
-  express.raw({type:"application/json"}),
-  stripeWebhook
-)
+  express.raw({ type: "application/json" }),
+  stripeWebhook,
+);
 
 app.use(
   cors({
-    origin: "https://examnotesaiclient-2jcj.onrender.com",
-    // origin: "http://localhost:5173",
+    origin:
+      process.env.NODE_ENV === "production"
+        ? "https://examnotesaiclient-2jcj.onrender.com"
+        : "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   }),
@@ -37,9 +39,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
-app.use("/api/notes",notesRouter);
-app.use("/api/pdf",pdfRouter);
-app.use("/api/credits",creditsRouter);
+app.use("/api/notes", notesRouter);
+app.use("/api/pdf", pdfRouter);
+app.use("/api/credits", creditsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);

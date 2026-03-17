@@ -1,0 +1,58 @@
+export const studioFeatures = [
+  {
+    id: 1,
+    icon: "📘",
+    title: "Exam Notes",
+    des: "Generate smart, exam-focused notes with key concepts and revision points.",
+    path: "/generate/notes",
+  },
+  {
+    id: 2,
+    icon: "📝",
+    title: "Quizzes",
+    des: "Create practice quizzes with MCQs to test your understanding instantly.",
+    path: "/generate/quiz",
+  },
+  {
+    id: 3,
+    icon: "🎯",
+    title: "Interview Prep",
+    des: "Prepare for interviews with tailored questions and answers.",
+    path: "/generate/interview",
+  },
+  {
+    id: 4,
+    icon: "📊",
+    title: "Diagrams",
+    des: "Auto-generate flowcharts and visual diagrams for better clarity.",
+    path: "/generate/diagrams",
+  },
+  {
+    id: 5,
+    icon: "📄",
+    title: "PDF Export",
+    des: "Download your notes and quizzes as clean, printable PDFs.",
+    path: "/export/pdf",
+  },
+  {
+    id: 6,
+    icon: "⚡",
+    title: "Quick Summary",
+    des: "Convert long content into short, high-quality summaries instantly.",
+    path: "/generate/summary",
+  },
+  {
+    id: 7,
+    icon: "🧠",
+    title: "Flashcards",
+    des: "Generate flashcards for fast revision and memory retention.",
+    path: "/generate/flashcards",
+  },
+  {
+    id: 8,
+    icon: "📚",
+    title: "Explain Topic",
+    des: "Get simple explanations for complex topics in seconds.",
+    path: "/generate/explain",
+  },
+];

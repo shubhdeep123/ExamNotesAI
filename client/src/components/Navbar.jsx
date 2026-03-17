@@ -40,7 +40,7 @@ border border-white/10
 shadow-[0_22px_55px_rgba(0,0,0,0.75)]
 flex items-center justify-between px-8 py-4"
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate("/")}>
         <img src={logo} alt="examnotes" className="w-9 h-9" />
         <span className="text-lg hidden md:block font-semibold text-white">
           ExamNotes <span className="text-gray-400">AI</span>

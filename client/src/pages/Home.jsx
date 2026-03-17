@@ -49,7 +49,7 @@ const Home = () => {
             </motion.p>
           </motion.div>
                       <motion.button
-              onClick={()=>{navigate("/notes");}}
+              onClick={()=>{navigate("/studio");}}
               whileHover={{
                 scale: 1.07,
               }}

@@ -1,8 +1,11 @@
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
-function Feature({ icon, title, des }) {
+function Feature({ icon, title, des, path }) {
+  const navigate = useNavigate();
   return (
     <motion.div
+      onClick={() => navigate(path)}
       whileHover={{
         y: -12,
         rotateX: 8,

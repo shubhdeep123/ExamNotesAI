@@ -140,7 +140,7 @@ const History = () => {
               </button>
               <div className="mb-4 space-y-1">
                 <button
-                  onClick={() => navigate("/notes")}
+                  onClick={() => navigate("/generate/notes")}
                   className="text-start w-full px-3 py-2 rounded-lg text-sm text-gray-200 bg-white/10 hover:bg-white/20"
                 >
                   ➕ New Notes

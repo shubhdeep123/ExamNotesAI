@@ -71,7 +71,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li
               onClick={() => {
-                navigate("/notes");
+                navigate("/generate/notes");
               }}
               className="text-gray-300 hover:text-white transition-colors"
             >
