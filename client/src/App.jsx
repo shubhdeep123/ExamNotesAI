@@ -11,7 +11,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 import Studio from "./pages/Studio";
 import WIPFeature from "./pages/WIPFeature";
-export const serverUrl = (import.meta.env.REACT_ENV = "production"
+export const serverUrl = (import.meta.env.REACT_ENV == "production"
   ? "https://examnotesaiserver-0u6p.onrender.com/api"
   : "http://localhost:8000/api");
 
