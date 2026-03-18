@@ -18,25 +18,30 @@ export const generateNotes = async (payload) => {
   try {
     const result = await axios.post(
       `${serverUrl}/notes/generate-notes`,
-       payload,
+      payload,
       { withCredentials: true },
     );
-    console.log(result.data)
+    console.log(result.data);
     return result.data;
   } catch (error) {
-    console.log("Generate notes Error :",error);
+    console.log("Generate notes Error :", error);
   }
 };
 
 export const generatePdf = async (result) => {
   try {
-    const response = await axios.post(`${serverUrl}/pdf/generate-pdf`,{result},{
-      responseType:"blob", withCredentials:true
-    })
+    const response = await axios.post(
+      `${serverUrl}/pdf/generate-pdf`,
+      { result },
+      {
+        responseType: "blob",
+        withCredentials: true,
+      },
+    );
 
-    const blob = new Blob([response.data],{
-      type:"application/pdf"
-    })
+    const blob = new Blob([response.data], {
+      type: "application/pdf",
+    });
 
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -46,6 +51,20 @@ export const generatePdf = async (result) => {
 
     window.URL.revokeObjectURL(url);
   } catch (error) {
-    throw new Error("PDF download failed")
+    throw new Error("PDF download failed");
+  }
+};
+
+export const generateInterview = async (payload) => {
+  try {
+    const result = await axios.post(
+      `${serverUrl}/interview/generate-interview`,
+      payload,
+      { withCredentials: true },
+    );
+    console.log(result.data);
+    return result.data;
+  } catch (error) {
+    throw new Error("Generate Interview Notes:" ,error);
   }
 };

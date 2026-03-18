@@ -10,7 +10,7 @@ const Studio = () => {
       <Navbar />
       <section className="max-w-6xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-4 gap-10">
         {studioFeatures.map((feature) => (
-            <Feature {...feature} />
+            <Feature {...feature} key={feature.id} />
         ))}
       </section>
       <Footer />

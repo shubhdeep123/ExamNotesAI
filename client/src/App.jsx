@@ -12,6 +12,7 @@ import PaymentFailed from "./pages/PaymentFailed";
 import Studio from "./pages/Studio";
 import WIPFeature from "./pages/WIPFeature";
 import Loader from "./components/Loader";
+import Interview from "./pages/Interview";
 export const serverUrl = import.meta.env.VITE_API_URL;
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
 
   // Show loader while checking auth
   if (isLoading) {
-    return <Loader/>;
+    return <Loader />;
   }
 
   console.log(userData);
@@ -54,6 +55,10 @@ const App = () => {
         <Route
           path="/studio"
           element={userData ? <Studio /> : <Navigate to="/login" replace />}
+        />
+        <Route
+          path="/generate/interview"
+          element={userData ? <Interview /> : <Navigate to="/login" />}
         />
         <Route path="/generate/*" element={<WIPFeature />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
