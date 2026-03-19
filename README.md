@@ -46,11 +46,13 @@ CVC: Any 3 digits
 ✨ AI-powered exam notes generation  
 📄 Download generated notes as PDF  
 🧠 Smart summarization and key concept extraction  
+🎯 Interview Prep Notes
+📝 Generate quizes
 💳 Credit-based usage system  
 💰 Stripe payment integration  
 🔐 Google authentication  
 📂 Manage generated notes  
-⚡ Fast backend processing  
+⚡ Fast backend processing
 
 ---
 
