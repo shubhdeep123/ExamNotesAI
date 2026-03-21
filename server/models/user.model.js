@@ -26,6 +26,11 @@ const userSchema = new mongoose.Schema({
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Notes",
         default: [],
+    },
+    interview:{
+        type:[mongoose.Schema.Types.ObjectId],
+        ref:"InterviewModel",
+        default:[]
     }
 }, { timestamps: true });
 

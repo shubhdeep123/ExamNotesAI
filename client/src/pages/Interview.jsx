@@ -40,12 +40,27 @@ const Interview = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           <button
             onClick={() => navigate("/pricing")}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm"
           >
-            💎 {credits} ➕
+            <span className="text-xl">💎</span>
+            <span>{credits}</span>
+            <motion.span
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.97 }}
+              className="ml-2 h-5 w-5 flex items-center justify-center rounded-full bg-white text-xs font-bold"
+            >
+              ➕
+            </motion.span>
+          </button>
+
+          <button
+            onClick={() => navigate("/history")}
+            className="px-4 py-3 rounded-full text-sm font-medium bg-white/10 border border-white/20 text-white hover:bg-white/20 transition flex items-center gap-2"
+          >
+            📚 Your Inteview Q's
           </button>
         </div>
       </motion.header>
@@ -105,7 +120,7 @@ const Interview = () => {
           transition={{ duration: 0.4 }}
           className="grid gap-6"
         >
-          {result.questions?.map((q, index) => (
+          {result.map((q, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.1)]"

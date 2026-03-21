@@ -58,7 +58,7 @@ export const generatePdf = async (result) => {
 export const generateInterview = async (payload) => {
   try {
     const result = await axios.post(
-      `${serverUrl}/interview/generate-interview`,
+      `${serverUrl}/interview/generate`,
       payload,
       { withCredentials: true },
     );

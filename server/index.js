@@ -9,6 +9,7 @@ import notesRouter from "./routes/notes.routes.js";
 import pdfRouter from "./routes/pdf.routes.js";
 import creditsRouter from "./routes/credits.route.js";
 import { stripeWebhook } from "./controller/credits.controller.js";
+import interviewRouter from "./routes/interview.routes.js";
 dotenv.config();
 
 const app = express();
@@ -42,6 +43,7 @@ app.use("/api/user", userRouter);
 app.use("/api/notes", notesRouter);
 app.use("/api/pdf", pdfRouter);
 app.use("/api/credits", creditsRouter);
+app.use("/api/interview",interviewRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);

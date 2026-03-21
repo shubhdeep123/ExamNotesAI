@@ -1,4 +1,4 @@
-export const buildPrompt = ({
+export const buildNotesPrompt = ({
   topic,
   classLevel,
   examType,
@@ -122,6 +122,86 @@ STRICT JSON FORMAT (DO NOT CHANGE):
   },
   "charts": []
 }
+
+RETURN ONLY VALID JSON.
+`;
+};
+
+export const buildInterviewPrompt = ({
+  role,
+  experience,
+  topics,
+  includeAnswers,
+  mixedDifficulty,
+}) => {
+  return `
+You are a STRICT JSON generator for an AI interview preparation system.
+
+⚠️ VERY IMPORTANT:
+- Output MUST be valid JSON
+- Your response will be parsed using JSON.parse()
+- INVALID JSON will cause system failure
+- Use ONLY double quotes "
+- NO comments, NO trailing commas
+- Escape line breaks using \\n
+- Do NOT use emojis inside text values
+
+TASK:
+Generate interview questions based on the given input.
+
+INPUT:
+Role: ${role}
+Experience: ${experience || "Not specified"}
+Topics: ${topics || "General"}
+Include Answers: ${includeAnswers ? "YES" : "NO"}
+Mixed Difficulty: ${mixedDifficulty ? "YES" : "NO"}
+
+GLOBAL RULES:
+- Questions must be practical and commonly asked in real interviews
+- Keep language clear and concise
+- Avoid overly theoretical or irrelevant questions
+- Focus on real-world understanding
+
+DIFFICULTY RULES:
+- If MIXED DIFFICULTY is YES:
+  - Include Easy, Medium, and Hard questions
+- If MIXED DIFFICULTY is NO:
+  - Keep difficulty consistent with experience level
+
+ANSWER RULES:
+- If INCLUDE ANSWERS is YES:
+  - Provide short, clear, interview-ready answers
+  - Max 3–4 lines per answer
+- If INCLUDE ANSWERS is NO:
+  - "answer" MUST be ""
+
+QUESTION TYPES:
+- Include a mix of:
+  - Conceptual questions
+  - Practical/scenario-based questions
+  - Coding or problem-solving questions (if applicable)
+
+STRICT JSON FORMAT (DO NOT CHANGE):
+
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "string",
+      "answer": "string",
+      "difficulty": "Easy | Medium | Hard",
+      "type": "Conceptual | Practical | Coding"
+    }
+  ]
+}
+
+RULES:
+- Generate EXACTLY 20 questions
+- IDs must start from 1 and increment
+- difficulty must match exactly: Easy, Medium, or Hard
+- type must match exactly: Conceptual, Practical, or Coding
+- Do NOT add extra fields
+- Do NOT wrap JSON in markdown
 
 RETURN ONLY VALID JSON.
 `;
