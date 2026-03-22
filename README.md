@@ -47,7 +47,9 @@ CVC: Any 3 digits
 📄 Download generated notes as PDF  
 🧠 Smart summarization and key concept extraction  
 🎯 Interview Prep Notes
+
 📝 Generate quizes
+
 💳 Credit-based usage system  
 💰 Stripe payment integration  
 🔐 Google authentication  
