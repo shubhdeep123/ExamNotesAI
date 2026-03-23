@@ -41,6 +41,7 @@ const DynamicForm = ({
     setError("");
     setLoading(true);
     setResult(null);
+    setFormData({});
 
     try {
       const result = await onSubmit(formData);
