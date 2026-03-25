@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 
-function Feature({ icon, title, des, path }) {
+function FeatureCard({ icon, title, des, path }) {
   const navigate = useNavigate();
   return (
     <motion.div
@@ -30,4 +30,4 @@ function Feature({ icon, title, des, path }) {
   );
 }
 
-export default Feature;
+export default FeatureCard;

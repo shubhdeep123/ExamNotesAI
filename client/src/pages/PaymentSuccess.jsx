@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { motion } from "motion/react"
 import { FiCheckCircle } from "react-icons/fi";
-import { getCurrentUser } from '../services/api';
+import { getCurrentUser } from '../services/apiClient';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 function PaymentSuccess() {

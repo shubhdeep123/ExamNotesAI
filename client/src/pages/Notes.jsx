@@ -3,11 +3,11 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import DynamicForm from "../components/DynamicForm";
+import DynamicForm from "../components/forms/DynamicForm";
 import { notesConfig } from "../static/configs/notesConfig";
-import { generateNotes } from "../services/api";
+import { generateNotes } from "../services/apiClient";
 
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/layout/Sidebar";
 import FinalResult from "../components/FinalResult";
 
 const Notes = () => {

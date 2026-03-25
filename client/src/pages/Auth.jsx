@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { FcGoogle } from "react-icons/fc";
-import Feature from "../components/Feature";
+import FeatureCard from "../components/ui/FeatureCard";
 import { features } from "../static/staticJsonData";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../utils/firebase";
@@ -92,7 +92,7 @@ bg-clip-text text-transparent"
         {/* RIGHT CONTENT */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <Feature
+            <FeatureCard
               key={index}
               icon={feature.icon}
               title={feature.title}

@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "motion/react";
-import logo from "../assets/logo.png";
+import logo from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { serverUrl } from "../App";
+import { serverUrl } from "../../App";
 import { useDispatch } from "react-redux";
-import { setLoadingFalse, setUserData } from "../redux/userSlice";
+import { setLoadingFalse, setUserData } from "../../redux/userSlice";
 
 const Footer = () => {
   const navigate = useNavigate();

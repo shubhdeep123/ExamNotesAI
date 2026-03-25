@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import { useNavigate } from "react-router-dom";
 
 const WIPFeature = () => {
@@ -16,7 +16,7 @@ const WIPFeature = () => {
 
           {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            This Feature is Cooking 🍳
+            This FeatureCard is Cooking 🍳
           </h1>
 
           {/* Subtitle */}

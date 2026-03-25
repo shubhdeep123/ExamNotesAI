@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 import MermaidSetup from "./MermaidSetup";
 import RechartSetUp from "./RechartSetup";
-import { generatePdf } from "../services/api";
+import { generatePdf } from "../services/apiClient";
 
 const markDownComponent = {
   h1: ({ children }) => (

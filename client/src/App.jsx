@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
-import { getCurrentUser } from "./services/api";
+import { getCurrentUser } from "./services/apiClient";
 import { useDispatch, useSelector } from "react-redux";
 import Notes from "./pages/Notes";
 import History from "./pages/History";
@@ -11,7 +11,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 import Studio from "./pages/Studio";
 import WIPFeature from "./pages/WIPFeature";
-import Loader from "./components/Loader";
+import Loader from "./components/ui/Loader";
 import Interview from "./pages/Interview";
 export const serverUrl = import.meta.env.VITE_API_URL;
 

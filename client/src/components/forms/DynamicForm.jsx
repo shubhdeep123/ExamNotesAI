@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import Toggle from "./Toggle";
+import Toggle from "../ui/Toggle";
 import { useDispatch } from "react-redux";
-import { updateCredits } from "../redux/userSlice";
+import { updateCredits } from "../../redux/userSlice";
 
 const DynamicForm = ({
   config,

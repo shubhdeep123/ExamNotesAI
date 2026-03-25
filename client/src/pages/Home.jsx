@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/layout/Navbar";
 import { motion } from "motion/react";
-import img from '../assets/img1.png';
-import Feature from "../components/Feature";
-import Footer from "../components/Footer";
+import img from '../assets/images/img1.png';
+import FeatureCard from "../components/ui/FeatureCard";
+import Footer from "../components/layout/Footer";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -81,10 +81,10 @@ const Home = () => {
       </section>
       {/* Bottom Section */}
       <section className='max-w-6xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-4 gap-10'>
-        <Feature icon="📘" title="Exam Notes" des="High-yield exam-oriented notes with revision points."/>
-        <Feature icon="📂" title="Project Notes" des="Well-structured content for assignments and projects." />
-        <Feature icon="📊" title="Diagrams" des="Auto-generated visual diagrams for clarity." />
-        <Feature icon="⬇️" title="PDF Download" des="Download clean, printable PDFs instantly." />
+        <FeatureCard icon="📘" title="Exam Notes" des="High-yield exam-oriented notes with revision points."/>
+        <FeatureCard icon="📂" title="Project Notes" des="Well-structured content for assignments and projects." />
+        <FeatureCard icon="📊" title="Diagrams" des="Auto-generated visual diagrams for clarity." />
+        <FeatureCard icon="⬇️" title="PDF Download" des="Download clean, printable PDFs instantly." />
       </section>
       <Footer />
     </div>

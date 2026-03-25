@@ -3,9 +3,9 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import DynamicForm from "../components/DynamicForm";
+import DynamicForm from "../components/forms/DynamicForm";
 import { interviewConfig } from "../static/configs/interviewConfig";
-import { generateInterview } from "../services/api";
+import { generateInterview } from "../services/apiClient";
 
 const Interview = () => {
   const navigate = useNavigate();

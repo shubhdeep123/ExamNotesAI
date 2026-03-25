@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Toggle from "./Toggle";
-import { generateNotes } from "../services/api";
+import { generateNotes } from "../../services/apiClient";
 import { useDispatch } from "react-redux";
-import { updateCredits } from "../redux/userSlice";
+import { updateCredits } from "../../redux/userSlice";
 
 const TopicForm = ({ setResult, setLoading, loading, setError }) => {
   const [topic, setTopic] = useState("");

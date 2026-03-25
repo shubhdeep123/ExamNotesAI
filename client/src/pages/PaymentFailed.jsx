@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { motion } from "motion/react"
 import { FaTimesCircle } from "react-icons/fa";
-import { getCurrentUser } from '../services/api';
+import { getCurrentUser } from '../services/apiClient';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 function PaymentFailed() {

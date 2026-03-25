@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { pricingPlans } from "../static/staticJsonData";
-import PricingCard from "../components/PricingCard";
+import PricingCard from "../components/ui/PricingCard";
 import axios from "axios";
 import { serverUrl } from "../App";
 
