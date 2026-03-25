@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { GiHamburgerMenu } from "react-icons/gi";
-import FinalResult from "../components/FinalResult";
+import FinalResult from "../features/notes/components/FinalResult";
 
 const History = () => {
   const [topics, setTopics] = useState([]);

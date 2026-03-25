@@ -8,7 +8,7 @@ import { notesConfig } from "../static/configs/notesConfig";
 import { generateNotes } from "../services/apiClient";
 
 import Sidebar from "../components/layout/Sidebar";
-import FinalResult from "../components/FinalResult";
+import FinalResult from "../features/notes/components/FinalResult";
 
 const Notes = () => {
   const navigate = useNavigate();

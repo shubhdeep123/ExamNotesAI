@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import logo from "../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { serverUrl } from "../../App";
