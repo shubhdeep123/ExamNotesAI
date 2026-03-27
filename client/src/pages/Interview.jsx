@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import DynamicForm from "../components/forms/DynamicForm";
+import InterviewResult from "../features/interview/components/InterviewResult"; // ✅ added
 import { interviewConfig } from "../static/configs/interviewConfig";
 import { generateInterview } from "../services/apiClient";
 
@@ -120,26 +121,7 @@ const Interview = () => {
           transition={{ duration: 0.4 }}
           className="grid gap-6"
         >
-          {result.map((q, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.1)]"
-            >
-              <h3 className="font-semibold text-lg mb-2">
-                {index + 1}. {q.question}
-              </h3>
-
-              {q.answer && (
-                <p className="text-gray-700 mb-2">
-                  💬 {q.answer}
-                </p>
-              )}
-
-              <span className="text-xs px-2 py-1 bg-gray-200 rounded">
-                {q.difficulty}
-              </span>
-            </div>
-          ))}
+          <InterviewResult data={result} />
         </motion.div>
       )}
     </div>

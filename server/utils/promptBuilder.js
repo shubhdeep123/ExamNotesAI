@@ -159,7 +159,6 @@ Mixed Difficulty: ${mixedDifficulty ? "YES" : "NO"}
 GLOBAL RULES:
 - Questions must be practical and commonly asked in real interviews
 - Keep language clear and concise
-- Avoid overly theoretical or irrelevant questions
 - Focus on real-world understanding
 
 DIFFICULTY RULES:
@@ -170,16 +169,23 @@ DIFFICULTY RULES:
 
 ANSWER RULES:
 - If INCLUDE ANSWERS is YES:
-  - Provide short, clear, interview-ready answers
-  - Max 3–4 lines per answer
+  - Provide short, structured answers
+  - Max 3–4 lines
 - If INCLUDE ANSWERS is NO:
   - "answer" MUST be ""
 
 QUESTION TYPES:
-- Include a mix of:
-  - Conceptual questions
-  - Practical/scenario-based questions
-  - Coding or problem-solving questions (if applicable)
+- Include:
+  - Conceptual
+  - Practical
+  - Coding (if applicable)
+
+NEW STRUCTURE REQUIREMENTS:
+Each question MUST include:
+- keyPoints → array of 2–4 short bullet points
+- example → short code example (ONLY for coding/practical, else "")
+- mistake → one common mistake (short sentence)
+- explanation → short 1–2 line intuition (very important for interviews)
 
 STRICT JSON FORMAT (DO NOT CHANGE):
 
@@ -190,7 +196,11 @@ STRICT JSON FORMAT (DO NOT CHANGE):
       "question": "string",
       "answer": "string",
       "difficulty": "Easy | Medium | Hard",
-      "type": "Conceptual | Practical | Coding"
+      "type": "Conceptual | Practical | Coding",
+      "keyPoints": ["string", "string"],
+      "example": "string",
+      "mistake": "string",
+      "explanation": "string"
     }
   ]
 }
@@ -200,6 +210,8 @@ RULES:
 - IDs must start from 1 and increment
 - difficulty must match exactly: Easy, Medium, or Hard
 - type must match exactly: Conceptual, Practical, or Coding
+- keyPoints must be an array (2–4 items)
+- example must be "" if not applicable
 - Do NOT add extra fields
 - Do NOT wrap JSON in markdown
 
